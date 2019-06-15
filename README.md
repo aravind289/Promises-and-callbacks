@@ -1,3 +1,2 @@
-# Promises-and-callbacks
-Basic knowledge of promises and callbacks
-[blog1.md](promises and callbacks.md)
+#My blog
+[blog1](promises and callbacks.md)
