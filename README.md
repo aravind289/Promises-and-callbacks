@@ -91,6 +91,9 @@ If the functions executes effectively,it is basically resolved.
 And if it  is not it throws error.
 
 Promise is always called using .then method.
+**Basic syntax**
+new Promise(executor);
+here executor is a function which takes two paramters resolve and reject.The executor normally initiates some asynchronous work, and then, once that completes, either calls the resolve function to resolve the promise or else rejects it if an error occurred. If an error is thrown in the executor function, the promise is rejected. 
 
 **So how to create a promise?**
 A basic example of how to create a promise
@@ -101,6 +104,7 @@ Const prom= new Promise((resolve,reject) =>{
 
 //resolve is basically the callback function.
 ```
+
 So small example:
 
 ```
@@ -121,6 +125,17 @@ resolve();
 promise.then(success);
 promise.catch(error);
 ```
+
+Lets take a real example on how to fetch data and display it in console.
+~~~
+function getData(){
+    
+
+   return   fetch('https://jsonplaceholder.typicode.com/users').then(res=>res.json()).then(value=>console.log(value));
+}
+
+~~~
+If you see the above code , you can see a method called fetch  which returns promise.This is a way of fetching data .The above data fetched has to converted to JSON and then the value is displayed in console.
 
 A pictorial representation of how promises work.
 ![how promises work](https://mdn.mozillademos.org/files/15911/promises.png)
